@@ -44,7 +44,7 @@ for(i in seq(1,dim(test)[2]))
   { test[,i]<-as.integer(factor(test[,i]))}
   
 }
-test[,isNum-1]<-predict(preObj,test[,isNum-1])
+test<-predict(preObj,test)
 QuoteConversion_Flag<-predict(model,newdata=test,type="class")
 quoNum<-fread("test.csv",select="QuoteNumber")
 prediction<-data.frame(quoNum,QuoteConversion_Flag)
